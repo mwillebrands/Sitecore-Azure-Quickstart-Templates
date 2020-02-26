@@ -584,22 +584,6 @@
       "tags": {
         "provider": "[variables('sitecoreTags').provider]"
       }
-    },
-    {
-      "type": "Microsoft.Web/certificates",
-      "name": "[variables('authCertificateNameTidy')]",
-      "apiVersion": "[variables('certificateApiVersion')]",
-      "location": "[parameters('location')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('singleHostingPlanNameTidy'))]"
-      ],
-      "properties": {
-        "password": "[parameters('authCertificatePassword')]",
-        "pfxBlob": "[parameters('authCertificateBlob')]"
-      },
-      "tags": {
-        "provider": "[variables('sitecoreTags').provider]"
-      }
     }
   ],
   "outputs": {
