@@ -41,7 +41,9 @@
       "tasks": "prc-tasks",
       "forms": "forms",
       "exmmaster" : "exmmaster"
-    }
+    },
+
+    "authCertificateThumbprint": "[parameters('singleHostingPlanSkuName')]"
   },
   "parameters": {
     "deploymentId": {
@@ -225,6 +227,9 @@
     "authCertificatePassword": {
       "type": "securestring",
       "minLength": 1
+    },
+    "authCertificateThumbprint":{
+      "type": "securestring"
     }
   },
   "resources": [
@@ -593,8 +598,10 @@
         "sqlServerFqdn": "[reference(concat('Microsoft.Sql/servers/', variables('sqlServerNameTidy'))).fullyQualifiedDomainName]",
         "siWebAppHostName": "[reference(concat('Microsoft.Web/sites/', variables('siWebAppNameTidy')), variables('webApiVersion')).defaultHostName]",
         "singleWebAppHostName": "[reference(concat('Microsoft.Web/sites/', variables('singleWebAppNameTidy')), variables('webApiVersion')).defaultHostName]",
-        "authCertificateThumbprint": "D09BF43A4D0788875A7B3442AC61A82521C87D77"
+        "authCertificateThumbprint": "[variables('authCertificateThumbprint')]"
       }
     }
   }
 }
+
+

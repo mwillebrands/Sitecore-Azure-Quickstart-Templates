@@ -596,6 +596,9 @@
       "type": "string",
       "minLength": 1,
       "defaultValue": "[concat(parameters('deploymentId'), '-asb')]"
+    },
+    "authCertificateThumbprint":{
+      "type": "securestring"
     }
   },
   "resources": [
@@ -749,6 +752,9 @@
           },
           "authCertificatePassword": {
             "value": "[parameters('authCertificatePassword')]"
+          },
+          "authCertificateThumbprint": {
+            "value": "[parameters('authCertificateThumbprint')]"
           }
         }
       },
