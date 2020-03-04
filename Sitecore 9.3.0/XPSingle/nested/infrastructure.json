@@ -43,7 +43,7 @@
       "exmmaster" : "exmmaster"
     },
 
-    "authCertificateThumbprint": "[parameters('singleHostingPlanSkuName')]"
+    "authCertificateThumbprint": "[parameters('authCertificateThumbprint')]"
   },
   "parameters": {
     "deploymentId": {
